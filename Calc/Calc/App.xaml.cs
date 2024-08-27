@@ -4,6 +4,8 @@ using Microsoft.UI.Windowing;
 using Windows.Graphics;
 #endif
 
+using Calc.Views;
+
 namespace Calc
 {
     public partial class App : Application
@@ -28,7 +30,7 @@ namespace Calc
         });
 #endif
 
-            MainPage = new AppShell();
+            MainPage = new CalculatorPage();
         }
     }
 }
