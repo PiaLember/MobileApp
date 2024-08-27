@@ -1,31 +1,34 @@
 ﻿#if MAC
 using Microsoft.UI;
-using Windows Graphics;
+using Microsoft.UI.Windowing;
+using Windows.Graphics;
 #endif
 
-namespace Calc;
-
-public partial class App : Application
+namespace Calc
 {
-	const int WindowWidth = 540;
-	const int WindowHeight = 1000;
-	public App()
-	{
-		InitializeComponent();
+    public partial class App : Application
+    {
+        const int WindowWidth = 540;
+        const int WindowHeight = 1000;
 
-		#if MAC
-		Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow),(handler, view)=>
-		{
-			var MauiWindow = handler.VirtualView;
-			var nativeWindow = handler.PlatformView;
-			nativeWindow.Activate();
-			InPtr windowHandle = WinRT.Interop.WindowNative.GetWindowhandle(nativeWindow);
-			WindowId windowId = Microsoft.UI.Wint32Interop.GetWindowIdFromWindow(windowHandle);
-			AppWindow appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
-			appWindow.Rezise(new SizeInt32(WindowWidth,WindowHeight));
-		});
-		#endif
+        public App()
+        {
+            InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+#if MAC
+        Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
+        {
+            var mauiWindow = handler.VirtualView;
+            var nativeWindow = handler.PlatformView;
+            nativeWindow.Activate();
+            IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
+            WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(windowHandle);
+            AppWindow appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+            appWindow.Resize(new SizeInt32(WindowWidth,WindowHeight));
+        });
+#endif
+
+            MainPage = new AppShell();
+        }
+    }
 }
