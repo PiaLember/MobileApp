@@ -238,7 +238,7 @@
             Grid.Row="6"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="7" />
 
@@ -246,7 +246,7 @@
             Grid.Row="6"
             Grid.Column="1"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="8" />
 
@@ -254,7 +254,7 @@
             Grid.Row="6"
             Grid.Column="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="9" />
 
@@ -262,7 +262,7 @@
             Grid.Row="7"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="4" />
 
@@ -270,7 +270,7 @@
             Grid.Row="7"
             Grid.Column="1"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="5" />
 
@@ -278,7 +278,7 @@
             Grid.Row="7"
             Grid.Column="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="6" />
 
@@ -286,7 +286,7 @@
             Grid.Row="8"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="0"
             Style="{StaticResource NumberButtonStyle}"
             Text="1" />
 
@@ -294,7 +294,7 @@
             Grid.Row="8"
             Grid.Column="1"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="2" />
 
@@ -302,7 +302,7 @@
             Grid.Row="8"
             Grid.Column="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="3" />
 
@@ -310,7 +310,7 @@
             Grid.Row="9"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="0" />
 
@@ -318,7 +318,7 @@
             Grid.Row="9"
             Grid.Column="1"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="." />
 
@@ -326,7 +326,7 @@
             Grid.Row="9"
             Grid.Column="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="⌫" />
 
@@ -334,7 +334,7 @@
             Grid.Row="7"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="x" />
 
@@ -342,7 +342,7 @@
             Grid.Row="7"
             Grid.Column="4"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="/" />
 
@@ -350,7 +350,7 @@
             Grid.Row="8"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="+" />
 
@@ -358,7 +358,7 @@
             Grid.Row="8"
             Grid.Column="4"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="-" />
 
@@ -367,7 +367,7 @@
             Grid.Column="3"
             Grid.ColumnSpan="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="AC" />
 
@@ -376,7 +376,7 @@
             Grid.Column="3"
             Grid.ColumnSpan="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="=" />
     </Grid>
