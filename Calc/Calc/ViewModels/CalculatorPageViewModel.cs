@@ -6,50 +6,58 @@ using System.Collections.Generic;
 
 namespace Calc.ViewModels
 {
-    [INotifyPropertyChanged]
-    internal partial class CalculatorPageViewModel
+    [INotifyPropertyChanged] 
+
+    internal partial class CalculatorPageViewModel //: ObservableObject
+    //: ObservableObject
     {
         [ObservableProperty]
         private string inputText = string.Empty;
 
         [ObservableProperty]
         private string calculatedResult = "0";
+
         private bool isSciOpWaiting = false;
 
         [RelayCommand]
         private void Reset()
         {
-            calculatedResult = "0";
-            inputText = string.Empty;
+            CalculatedResult = "0";
+            InputText = string.Empty;
             isSciOpWaiting = false;
         }
 
         [RelayCommand]
         private void Calculate()
         {
-            if(inputText.Lenght == 0)
+            if (InputText.Length == 0)
             {
                 return;
             }
 
-            if(isSciOpWaiting)
+            if (isSciOpWaiting)
             {
-                inputText += ")";
+                InputText += ")";
                 isSciOpWaiting = false;
             }
+
             try
             {
                 var inputString = NormalizeInputString();
                 var expression = new NCalc.Expression(inputString);
                 var result = expression.Evaluate();
-                calculatedResult = result.ToString();
+
+                CalculatedResult = result.ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                calculatedResult = "NaN";
+                CalculatedResult = "NaN";
             }
         }
-            private string NormalizeInputString()
+
+        private string NormalizeInputString()
+        {
+            Dictionary<string, string> _opMapper = new()
             {
                 {"×", "*"},
                 {"÷", "/"},
@@ -64,42 +72,43 @@ namespace Calc.ViewModels
                 {"LOG10", "Log10"},
                 {"POW", "Pow"},
                 {"SQRT", "Sqrt"},
-                {"ABS", "Abs"}
+                {"ABS", "Abs"},
             };
+
             var retString = InputText;
 
             foreach (var key in _opMapper.Keys)
             {
                 retString = retString.Replace(key, _opMapper[key]);
             }
+
             return retString;
-        
+        }
 
         [RelayCommand]
         private void Backspace()
         {
             if (InputText.Length > 0)
             {
-                InputText = InputText.Substring(0, InputText.Lenght - 1);
+                InputText = InputText.Substring(0, InputText.Length - 1);
             }
         }
 
         [RelayCommand]
-        public void NumberInput(string key)
+        private void NumberInput(string key)
         {
             InputText += key;
         }
 
         [RelayCommand]
-
         private void MathOperator(string op)
         {
-            if(isSciOpWaiting)
+            if (isSciOpWaiting)
             {
-                Inputtext += ")";
+                InputText += ")";
                 isSciOpWaiting = false;
             }
-            Inputtext += $" {op} ";
+            InputText += $" {op} ";
         }
 
         [RelayCommand]
@@ -107,18 +116,17 @@ namespace Calc.ViewModels
         {
             if (isSciOpWaiting)
             {
-                Inputtext += ")";
+                InputText += ")";
                 isSciOpWaiting = false;
             }
-            InputText += $" {op}";
+            InputText += $" {op} ";
         }
 
         [RelayCommand]
         private void ScientificOperator(string op)
         {
-            Inputtext += $"{op}(";
+            InputText += $"{op}(";
             isSciOpWaiting = true;
         }
-
     }
 }
