@@ -8,6 +8,6 @@ public partial class CalculatorPage : ContentPage
 	{
 		InitializeComponent();
 
-		BindingContext = new CalculatorPageViewModel();
+		this.BindingContext = new CalculatorPageViewModel();
 	}
 }
